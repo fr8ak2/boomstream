@@ -4,6 +4,8 @@ import gsap from 'gsap';
 let ctx;
 const header = ref();
 const logo = ref();
+const auth = ref();
+const lang = ref();
 
 onMounted(() => {
     ctx = gsap.context(() => {
@@ -12,8 +14,24 @@ onMounted(() => {
         gsap.from(logo.value, {
             autoAlpha: 0,
             y: '-30',
-            ease: 'ease-in',
-            duration: .65
+            ease: 'power2.out',
+            duration: .5
+        });
+
+        gsap.from(auth.value, {
+            autoAlpha: 0,
+            y: '-30',
+            ease: 'power2.out',
+            duration: .5,
+            delay: .5,
+        });
+
+        gsap.from(lang.value, {
+            autoAlpha: 0,
+            y: '-30',
+            ease: 'power2.out',
+            duration: .5,
+            delay: .65,
         });
     });
 });
@@ -37,11 +55,11 @@ onUnmounted(() => {
                 </div>
 
                 <div class="header__tools">
-                    <div class="header__auth">
+                    <div class="header__auth" ref="auth">
                         <Auth ref="auth"/>
                     </div>
 
-                    <div class="header__lang">
+                    <div class="header__lang" ref="lang">
                         <Lang ref="lang"/>
                     </div>
                 </div>
