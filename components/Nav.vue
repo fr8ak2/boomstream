@@ -1,0 +1,52 @@
+<script setup>
+import gsap from 'gsap';
+
+let ctx;
+const menu = ref();
+const items = {
+    primary: [
+        {url: '/products', title: 'Продукты'},
+        {url: 'solutions', title: 'Решения'},
+        {url: 'rates', title: 'Тарифы'},
+    ],
+    secondary: [
+        {url: 'about-us', title: 'О нас'},
+        {url: 'documents', title: 'Документы'}
+    ]
+}
+
+onMounted(() => {
+    ctx = gsap.context((self) => {
+        const links = self.selector('.menu__item');
+
+        gsap.from(links, {
+            duration: 0.8,
+            autoAlpha: 0,
+            y: '-30',
+            delay: 0.1,
+            stagger: 0.05,
+            ease: 'power2.out',
+        })
+    }, menu.value);
+});
+
+onUnmounted(() => {
+    ctx.revert();
+});
+</script>
+
+<template>
+    <nav class="menu" ref="menu">
+        <div class="menu__list">
+            <div class="menu__item" v-for="(item, index) of items.primary" :key="index">
+                <NuxtLink :href="item.url">{{ item.title }}</NuxtLink>
+            </div>
+        </div>
+
+        <div class="menu__list">
+            <div class="menu__item" v-for="(item, index) of items.secondary" :key="index">
+                <NuxtLink :href="item.url">{{ item.title }}</NuxtLink>
+            </div>
+        </div>
+    </nav>
+</template>

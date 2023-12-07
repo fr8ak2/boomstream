@@ -1,0 +1,6 @@
+
+.wrapper {
+    position: relative;
+    width: ($container-width - ($margin * 2));
+    margin: 0 $margin;
+}

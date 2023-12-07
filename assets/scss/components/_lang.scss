@@ -1,0 +1,10 @@
+
+.lang {
+
+    &__link {
+
+        &.--active {
+            color: $dark-gray;
+        }
+    }
+}

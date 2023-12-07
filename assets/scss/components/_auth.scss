@@ -1,0 +1,26 @@
+
+.auth {
+    display: flex;
+    width: 100%;
+    height: rem(58rem);
+    padding: rem(6px);
+    background: $violet-gray;
+    border-radius: rem(14px);
+
+    &__link {
+        display: flex;
+        align-items: center;
+        font-weight: $medium;
+        width: 100%;
+        height: rem(46px);
+        color: $black;
+        padding: 0 rem(25px);
+        border-radius: rem(10px);
+        backdrop-filter: blur(#{rem(2px)});
+
+        &.--active {
+            color: $white;
+            background: $purple;
+        }
+    }
+}

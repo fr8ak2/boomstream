@@ -1,0 +1,116 @@
+
+.cards {
+    position: sticky;
+    top: 0;
+    padding: rem(208px) 0 0;
+
+    &__list {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: rem(40px) 0;
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: rem(80px);
+        background: $black;
+        border-radius: rem(30px);
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 0 8vw;
+    }
+
+    &__content {
+        flex: 0 1 55%;
+    }
+
+    &__object {
+        flex: 1 0 0;
+    }
+
+    &__type {
+        font-size: rem(20px);
+        color: $lime;
+        margin: 0 0 rem(78px);
+
+        > span {
+            margin-right: rem(16px);
+            font-style: italic;
+        }
+    }
+
+    &__title {
+        color: $white;
+        margin: 0 0 rem(40px);
+    }
+
+    &__list {
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: rem(14px) 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: rem(14px) 0;
+            font-size: rem(28px);
+            color: rgba($white, 80%);
+
+            &:before {
+                content: '';
+                display: block;
+                width: rem(8px);
+                height: rem(8px);
+                margin-right: rem(22px);
+                background: $white;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__text {
+        font-size: rem(28px);
+        color: rgba($white, 80%);
+        max-width: rem(652px);
+    }
+
+    &__control {
+        position: sticky;
+        top: 0;
+        right: rem(36px);
+        display: flex;
+        flex-direction: column;
+        gap: rem(22px) 0;
+
+        &-bullet {
+            display: block;
+            position: relative;
+            width: rem(8px);
+            height: rem(8px);
+            background: $lime;
+            border-radius: 50%;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: rem(16px);
+                height: rem(16px);
+                border: 2px solid $lime-dark;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

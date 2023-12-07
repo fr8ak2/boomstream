@@ -1,0 +1,46 @@
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    transition: all $speed $easing;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+::selection {
+    background-color: $selection-background-color;
+    color: $selection-text-color;
+    -webkit-text-fill-color: $selection-text-color;
+    text-shadow: none;
+}
+
+.svg-symbols {
+    display: none;
+}
+
+svg {
+    display: block;
+}
+
+p {
+    margin: 0 0 rem(20px);
+}
+
+.--prevent-scroll {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
