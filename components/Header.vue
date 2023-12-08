@@ -21,7 +21,7 @@ onMounted(() => {
             autoAlpha: 0,
             y: -20,
             ease: 'power2.out',
-            duration: .65,
+            duration: .5,
             delay: .5
         })
     });
