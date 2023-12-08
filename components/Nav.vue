@@ -5,13 +5,13 @@ let ctx;
 const menu = ref();
 const items = {
     primary: [
-        {url: '/products', title: 'Продукты'},
-        {url: 'solutions', title: 'Решения'},
-        {url: 'rates', title: 'Тарифы'},
+        {url: '#', title: 'Продукты'},
+        {url: '#', title: 'Решения'},
+        {url: '#', title: 'Тарифы'},
     ],
     secondary: [
-        {url: 'about-us', title: 'О нас'},
-        {url: 'documents', title: 'Документы'}
+        {url: '#', title: 'О нас'},
+        {url: '#', title: 'Документы'}
     ]
 }
 

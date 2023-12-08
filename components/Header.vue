@@ -8,30 +8,25 @@ const auth = ref();
 const lang = ref();
 
 onMounted(() => {
+    const tl = gsap.timeline();
+
     ctx = gsap.context(() => {
         gsap.set(header.value, { autoAlpha: 1 });
 
-        gsap.from(logo.value, {
+        tl.from(logo.value, {
             autoAlpha: 0,
-            y: '-30',
-            ease: 'power2.out',
-            duration: .5
-        });
-
-        gsap.from(auth.value, {
+            ease: 'power3.inOut',
+            duration: 1
+        }).from(auth.value, {
             autoAlpha: 0,
-            y: '-30',
+            y: -20,
             ease: 'power2.out',
-            duration: .5,
-            delay: .5,
-        });
-
-        gsap.from(lang.value, {
+            duration: .65,
+        }).from(lang.value, {
             autoAlpha: 0,
-            y: '-30',
+            y: -20,
             ease: 'power2.out',
-            duration: .5,
-            delay: .65,
+            duration: .65,
         });
     });
 });
