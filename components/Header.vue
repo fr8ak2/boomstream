@@ -4,30 +4,26 @@ import gsap from 'gsap';
 let ctx;
 const header = ref();
 const logo = ref();
-const auth = ref();
-const lang = ref();
+const tools = ref();
 
 onMounted(() => {
-    const tl = gsap.timeline();
 
     ctx = gsap.context(() => {
-        gsap.set(header.value, { autoAlpha: 1 });
+        gsap.set(header.value, {autoAlpha: 1});
 
-        tl.from(logo.value, {
+        gsap.from(logo.value, {
             autoAlpha: 0,
             ease: 'power3.inOut',
             duration: 1
-        }).from(auth.value, {
+        })
+
+        gsap.from(tools.value, {
             autoAlpha: 0,
             y: -20,
             ease: 'power2.out',
             duration: .65,
-        }).from(lang.value, {
-            autoAlpha: 0,
-            y: -20,
-            ease: 'power2.out',
-            duration: .65,
-        });
+            delay: .5
+        })
     });
 });
 
@@ -42,19 +38,19 @@ onUnmounted(() => {
 
             <div class="header__inner">
                 <div class="header__logo" ref="logo">
-                    <Logo ref="logo" />
+                    <Logo ref="logo"/>
                 </div>
 
                 <div class="header__menu">
-                    <Nav />
+                    <Nav/>
                 </div>
 
-                <div class="header__tools">
-                    <div class="header__auth" ref="auth">
+                <div class="header__tools" ref="tools">
+                    <div class="header__auth">
                         <Auth ref="auth"/>
                     </div>
 
-                    <div class="header__lang" ref="lang">
+                    <div class="header__lang">
                         <Lang ref="lang"/>
                     </div>
                 </div>
